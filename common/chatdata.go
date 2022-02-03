@@ -98,8 +98,8 @@ var (
 	notice       = template.Must(template.New("notice").Parse(`<span class="notice">{{.Message}}</span>`))
 	command      = template.Must(template.New("command").Parse(`<span class="command">{{.Message}}</span>`))
 	commanderror = template.Must(template.New("commanderror").Parse(`<span class="commanderror">{{.Message}}</span>`))
-	cmdlMod      = template.Must(template.New("cmdlMod").Parse(`<span><img src="/static/img/mod.png" class="badge" /><span class="name" style="color:{{.Color}}">{{.From}}</span><b>:</b> <span class="msg">{{.Message}}</span></span>`))
-	cmdlAdmin    = template.Must(template.New("CmdlAdmin").Parse(`<span><img src="/static/img/admin.png" class="badge" /><span class="name" style="color:{{.Color}}">{{.From}}</span><b>:</b> <span class="msg">{{.Message}}</span></span>`))
+	cmdlMod      = template.Must(template.New("cmdlMod").Parse(`<span><img src="./static/img/mod.png" class="badge" /><span class="name" style="color:{{.Color}}">{{.From}}</span><b>:</b> <span class="msg">{{.Message}}</span></span>`))
+	cmdlAdmin    = template.Must(template.New("CmdlAdmin").Parse(`<span><img src="./static/img/admin.png" class="badge" /><span class="name" style="color:{{.Color}}">{{.From}}</span><b>:</b> <span class="msg">{{.Message}}</span></span>`))
 	defaultMsg   = template.Must(template.New("defaultMsg").Parse(`<span><span class="name" style="color:{{.Color}}">{{.From}}</span><b>:</b> <span class="msg">{{.Message}}</span></span>`))
 )
 

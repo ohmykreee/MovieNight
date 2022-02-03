@@ -44,7 +44,7 @@ function startGo() {
     }
 
     const go = new Go();
-    WebAssembly.instantiateStreaming(fetch("/static/main.wasm"), go.importObject).then((result) => {
+    WebAssembly.instantiateStreaming(fetch("./static/main.wasm"), go.importObject).then((result) => {
         go.run(result.instance);
     }).then(() => {
         $("#chatwindow").css("display", "grid");
@@ -56,6 +56,7 @@ function startGo() {
 
 function getWsUri() {
     port = window.location.port;
+    const url = new URL(window.location.href);
     if (port != "") {
         port = ":" + port;
     }
@@ -63,7 +64,7 @@ function getWsUri() {
     if (location.protocol == "https:") {
         proto = "wss://"
     }
-    return proto + window.location.hostname + port + "/ws";
+    return proto + window.location.hostname + port + url.pathname + "/ws";
 }
 
 let maxMessageCount = 0

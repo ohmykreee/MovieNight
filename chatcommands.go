@@ -604,7 +604,7 @@ func (cc *CommandControl) RunCommand(command string, args []string, sender *Clie
 }
 
 func cmdHelp(cl *Client, args []string) (string, error) {
-	url := "/help"
+	url := "./help"
 
 	if cl.CmdLevel >= common.CmdlMod {
 		url += "?mod=1"

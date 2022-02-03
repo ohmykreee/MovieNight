@@ -55,16 +55,13 @@ function startGo() {
 }
 
 function getWsUri() {
-    port = window.location.port;
     const url = new URL(window.location.href);
-    if (port != "") {
-        port = ":" + port;
-    }
-    proto = "ws://"
-    if (location.protocol == "https:") {
-        proto = "wss://"
-    }
-    return proto + window.location.hostname + port + url.pathname + "/ws";
+    if (url.protocol == "https:") {
+        url.protocol = "wss:";
+    } else {
+        url.protocol = "ws:";
+    };
+    return url.href + "/ws";
 }
 
 let maxMessageCount = 0
